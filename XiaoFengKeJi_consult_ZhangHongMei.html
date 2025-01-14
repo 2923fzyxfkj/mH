@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>XiaoFengKeJi - 咨询 - 张红梅</title>
+        <script>
+            let ProhibitedOperation = 0; // var ProhibitedOperation = 0;
+            let ProhibitedType = 'None'; // var ProhibitedType = 'None';
+
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            document.onkeydown = function(e) {
+                // 禁用F12、Ctrl+Shift+I、Ctrl+U、Ctrl+S、PrintScreen、Ctrl+P键
+                if (
+                    e.key === 'F12' ||
+                    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                    (e.ctrlKey && e.key === 'u') ||
+                    (e.ctrlKey && e.key === 's') ||
+                    (e.ctrlKey && e.key === 'p') ||
+                    e.key === 'PrintScreen'
+                ) {
+                    e.preventDefault();
+                    alert('此操作已被禁止！');
+                    console.log('ERROR: PROHIBITED OPERATION');
+                    ProhibitedOperation = ProhibitedOperation + 1;
+                    ProhibitedType = 'NoChoose';
+                    if (ProhibitedOperation === 9) {
+                        console.log('WARNING: AM');
+                    }
+                }
+            };
+
+            document.getElementById('payButton').addEventListener('click', function() {
+                // 下载多个文件
+                const files = [
+                    '08 第八章 维护就业权益.pptx',
+                    '07 第七章 实施求职行动.pptx',
+                    '06 第六章 就业信息获取与筛选.pptx',
+                    '05 第五章 就业政策与就业制度.pptx',
+                    '04 第四章 制订职业生涯规划.pptx',
+                    '03 第三章 客观认识职场.pptx',
+                    '02 第二章 学会自我探索.pptx',
+                    '01 第一章 认识高职教育.pptx'
+                ];
+
+                files.forEach(file => {
+                    downloadFile(file);
+                });
+            });
+
+            function downloadFile(fileName) {
+                const link = document.createElement('a');
+                link.href = `path/to/files/${fileName}`;
+                link.download = fileName;
+
+                // 添加调试信息
+                console.log(`Downloading file: ${link.href}`);
+
+                link.click();
+
+                // 确保浏览器执行完下载操作
+                setTimeout(() => {
+                    URL.revokeObjectURL(link.href);
+                }, 100);
+            }
+        </script>
+        <style>
+            @font-face {
+                font-family: 'MojanglesRegular';
+                src: url('Mojangles-Regular.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            body, h1, a {
+                font-family: 'MojanglesRegular', Arial, sans-serif; /* 应用自定义字体，若不支持则回退到Arial */
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">
+            XiaoFengKeJi - 咨询 - 张红梅
+        </h1>
+        <p>2元一次</p>
+        <img src="./XiaoFengKeJi_ZhangHongMei_ShouKuan.png.jpg"/>
+        <button id="payButton" style="height: 60px; width: 150px;">Download Teaching Documents</button>
+
+    </body>
+</html>

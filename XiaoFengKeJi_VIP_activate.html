@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XiaoFengKeJi - VIP激活</title>
+</head>
+<body>
+    <h1>VIP Activate</h1>
+    <input type="text" id="activationCode" placeholder="请输入激活码">
+    <button onclick="activate()">Activate</button>
+
+    <script>
+        function activate() {
+
+            const activationCode = document.getElementById('activationCode').value;
+            const multply = Math.random()*(length(activationCode));
+            const trueCode = localStorage.getItem("keys")
+            for (int i = 0; i < length(trueCode)+1; i++) {
+                if (activationCode === trueCode[i]) {
+                    window.location.href = "./index_VIP.html";
+                } else {
+                    alert("Activate code error, please you reset input!");
+                }
+            }
+        }
+    </script>
+    <style>
+    </style>
+</body>
+</html>

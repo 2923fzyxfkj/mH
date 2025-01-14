@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>XiaoFengKeJi - 登录</title>
+    <style>
+      input[type="text"],
+      input[type="password"] {
+        /* 设置从白色到紫色的渐变背景 */
+        background: linear-gradient(
+          90deg,
+          #ffc481,
+          #ffab74,
+          #ff8e73,
+          #ff6b7f,
+          #ff4395,
+          #ff00b3,
+          #fc00d8,
+          #cf10ff
+        );
+        /* 其他样式 */
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        color: black; /* 文字颜色 */
+        width: 200px; /* 输入框宽度 */
+        position: relative; /* 使伪元素相对于输入框定位 */
+      }
+
+      input[type="text"]::before {
+        content: "用户名";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.5); /* 调整文字颜色和透明度 */
+        z-index: 1; /* 确保文字在背景之上 */
+      }
+
+      input[type="password"]::before {
+        content: "密码";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.5); /* 调整文字颜色和透明度 */
+        z-index: 1; /* 确保文字在背景之上 */
+      }
+    </style>
+    <script>
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        console.log("Username:" + username);
+        console.log("Password:" + password);
+        if (
+          username === localStorage.getItem("Username:" + username) &&
+          password === localStorage.getItem("Password:" + password)
+        ) {
+          alert("登录成功");
+          window.location.href = "index_login.html"; // 跳转到 index.html
+        } else {
+          alert("用户名或密码错误");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="用户名" id="username" />
+    <br /><br />
+    <input type="password" placeholder="密码" id="password" />
+    <br /><br />
+    <button onclick="login()">登录</button>
+    <button
+      onclick="window.location.href='XiaoFengKeJi_Login_Register.html'"
+      class="register"
+    >
+      注册
+    </button>
+  </body>
+</html>

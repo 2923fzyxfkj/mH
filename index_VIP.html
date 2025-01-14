@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>XiaoFengKeJi - VIP</title>
+        <script>
+            function activateChangeFont() {
+                window.location.href = 'index_VIP_CSFont.html';
+            }
+        </script>
+        <style>
+            @font-face {
+                font-family: 'Open Sans Italic';
+                src: url('OpenSans-Italic-VF.woff2') format('woff2'),
+                     url('OpenSans-Italic-VF.woff') format('woff');
+                font-weight: normal;
+                font-style: italic;
+            }
+
+            body {
+                background: linear-gradient(45deg, #E27747, #FFD700); /* 土黄加亮黄渐变背景 */
+                color: #FFFFFF; /* 文字颜色为白色 */
+            }
+
+            h1, p, a {
+                font-size: 24px;
+                font-family: 'Open Sans Italic', Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>欢迎来到小冯科技VIP专区</h1>
+        <p>在这里，您可以享受最优质的服务。</p>
+        <h1>Welcome to XiaoFengKeJi VIP zone</h1>
+        <p>Here, you can enjoy the highest quality service</p>
+        <a href="./XiaoFengKeJi_teaching_materials.html" style="display: block; text-align: center;">下载教材</a>
+        <a href="./XiaoFengKeJi_VIP_DevTools_All.html" style="display: block; text-align: center;">DevelopTools</a>
+        <button onclick="activateChangeFont()" style="display: block; text-align: center;">Change to Client Side font(切换到客户端字体)</a>
+    </body>
+</html>

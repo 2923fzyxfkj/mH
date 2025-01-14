@@ -1,0 +1,57 @@
+<html lang="zh">
+    <head>
+        <title>XiaoFengKeJi - Main</title>
+        <script>
+            // 初始化用户名变量
+            // 这里假设用户名为'a'，实际应用中应该从其他地方获取
+            var Username_Check_value = 0; // Check localStorage Read successful
+            let Username = localStorage.getItem("username");
+            var Password = localStorage.getItem("password");
+            if (Username === null) {
+                console.error("Value not found in localStorage")
+                console.error("Please check Data")
+            } if(Username == undefined&&Username != null) {
+                console.error("Not data in localStorage")
+                console.error("Please check Data")
+            } else{
+                console.log("Check Data through localStorage")
+                Username_Check_value = 1; // Check localStorage Read successful Check_code set 1
+            }
+            // 定义点击事件处理函数
+            function showAlert() {
+                alert('用户名:' + Username);
+                let showAlert_alert_Password = prompt("密钥:")
+                if (showAlert_alert_Password == "..-. * --.. * -.--"){
+                    alert('密码:' + Password)
+                    alert("不可告闲人!!!!!")
+                } if (showAlert_alert_Password == "--.. * -. * --"){
+                    alert("[彩蛋]要不你来写?")
+                } if (showAlert_alert_Password == "-..- * .-"){
+                    alert("[彩蛋]我也玩我的世界")
+                } if (showAlert_alert_Password == "-..- * .. * .- * --- * .- * .."){
+                    alert("[彩蛋]他还好吗?")
+                } if (showAlert_alert_Password == "..--- * --... * -.-. * -.."){
+                    alert("[彩蛋]他为什么会被删除?")
+                } if (showAlert_alert_Password == "-.. * .-. * .. * - * ... * .... * --- * -"){
+                    alert("[彩蛋]他...")
+                } if (showAlert_alert_Password == "-.-. * -.."){
+                    alert("[彩蛋]全5彩蛋(本彩蛋不算)")
+                } if(showAlert_alert_Password != "--.. * -. * --"&&showAlert_alert_Password != "-..- * .-"&&showAlert_alert_Password != "-..- * .. * .- * --- * .- * .."&&showAlert_alert_Password != "..--- * --... * -.-. * -.."&&showAlert_alert_Password != "-..- * .. * .- * --- * .- * .."&&showAlert != "-.-. * -.."){
+                    alert("密钥错误")
+                    console.error("key error")
+                }
+            }
+            
+        </script>
+        <style>
+            html {
+                background: linear-gradient(90deg, #ffc481, #ffab74, #ff8e73, #ff6b7f, #ff4395, #ff00b3, #fc00d8, #cf10ff);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 添加一个按钮，并为其设置onclick属性 -->
+        <button onclick="showAlert()">显示</button>
+        <a href="./XiaoFengKeJi_VIP_activate.html" style="display: block; text-align: center;">VIP激活</a>
+    </body>
+</html>

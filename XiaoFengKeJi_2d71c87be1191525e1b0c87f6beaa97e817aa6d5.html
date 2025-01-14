@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>2d71c87be1191525e1b0c87f6beaa97e817aa6d5</title>
+        <script>
+            function setkey() {
+                var key = prompt("key")
+                if (key === sessionStorage.getItem("setkeykey")) {
+                    var keyslist = []
+                    keyslist.push(document.getElementById("keyset").value);
+                    localStorage.setItem("keys", keyslist);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <input id="keyset" placeholder="setkey">
+        <button onclick="setkey()">setkey</button>
+    </body>
+</html>

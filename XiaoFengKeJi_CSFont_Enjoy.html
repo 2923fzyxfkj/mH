@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>自定义字体示例</title>
+        <style>
+            @font-face {
+            font-family: 'CraftersDelight';
+            src: url("./Crafter'sDelight-Regular.woff2") format('woff2'),
+                 url("./Crafter'sDelight-Regular.woff") format('woff');
+            font-weight: normal;
+            font-style: normal;
+            }
+
+            body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'CraftersDelight', sans-serif; /* 应用自定义字体 */
+            }
+            .container {
+            text-align: center;
+            }
+
+            #searchInput {
+                padding: 10px;
+                width: 300px;
+                font-size: 16px;
+                font-family: 'Crafters Delight', sans-serif; /* 应用自定义字体 */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" placeholder="Enjoy!">
+        </div>
+    </body>
+</html>
